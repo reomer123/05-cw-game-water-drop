@@ -26,12 +26,23 @@ Fonts:
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    padding: 30px 0;
+    padding-top: 0;
+    gap: 20px;
+}
+
+.site-banner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 .game-wrapper {
@@ -47,9 +58,9 @@ body {
     align-items: center;
     width: 800px;
     padding: 10px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 .timer {
@@ -61,7 +72,7 @@ body {
 #game-container {
     width: 800px;
     height: 600px;
-    background-color: #e6f7ff;
+    background-color: #fed8c1;
     border: 2px solid #333;
     border-radius: 8px;
     position: relative;
@@ -126,8 +137,6 @@ body {
 .game-title {
     color: #131313;
     font-size: 48px;
-    margin-top: 0;
-    margin-bottom: 5px;  /* reduced from 20px */
     text-align: center;
 }
 
@@ -135,6 +144,10 @@ body {
     color: #666;
     font-size: 18px;
     text-align: center;
+}
+
+#hori-logo {
+    width: 300px;
 }
 
 @keyframes dropFall {
@@ -149,6 +162,14 @@ body {
 @media (max-width: 800px) {
     .game-wrapper, .score-panel, #game-container {
         width: 80vw;
+    }
+
+    .site-banner {
+        justify-content: center;
+    }
+
+    #hori-logo {
+        width: min(220px, 80vw);
     }
 
     .score-panel {
